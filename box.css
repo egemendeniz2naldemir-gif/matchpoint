@@ -1,0 +1,213 @@
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text-main: #f0f6fc;
+  --text-muted: #8b949e;
+  --primary: #238636;
+  --primary-hover: #2ea043;
+  --fight-bg: rgba(239, 68, 68, 0.15);
+  --fight-border: #ef4444;
+  --rest-bg: rgba(59, 130, 246, 0.15);
+  --rest-border: #3b82f6;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 540px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.setup-card h2, .history-header h2 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.input-group input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #fff;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.timer-card {
+  text-align: center;
+  position: relative;
+}
+
+.timer-card.fight {
+  background: var(--fight-bg);
+  border-color: var(--fight-border);
+}
+
+.timer-card.rest {
+  background: var(--rest-bg);
+  border-color: var(--rest-border);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: var(--border);
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.timer-card.fight .status-badge {
+  background: #ef4444;
+  color: #fff;
+}
+
+.timer-card.rest .status-badge {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.round-indicator {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.timer-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+  letter-spacing: -2px;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-warning { background: var(--warning); color: #fff; }
+.btn-danger { background: var(--danger); color: #fff; }
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-text:hover { color: var(--danger); }
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.history-item:last-child { border-bottom: none; }
+.empty-state {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1rem 0;
+}

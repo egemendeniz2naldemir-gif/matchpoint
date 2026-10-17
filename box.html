@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MatchPoint — Workout & Round Tracker</title>
+  <link rel="stylesheet" href="box.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <span class="icon">🥊</span>
+        <h1>MatchPoint</h1>
+      </div>
+      <p class="subtitle">Boxing & HIIT Training Interval Assistant</p>
+    </header>
+
+    <main class="main-content">
+      <!-- Setup Panel -->
+      <section class="card setup-card" id="setupCard">
+        <h2>Session Configuration</h2>
+        <div class="form-grid">
+          <div class="input-group">
+            <label for="roundTime">Round Duration (sec)</label>
+            <input type="number" id="roundTime" value="180" min="5" max="3600">
+          </div>
+          <div class="input-group">
+            <label for="restTime">Rest Interval (sec)</label>
+            <input type="number" id="restTime" value="60" min="5" max="1800">
+          </div>
+          <div class="input-group">
+            <label for="totalRounds">Total Rounds</label>
+            <input type="number" id="totalRounds" value="5" min="1" max="50">
+          </div>
+        </div>
+      </section>
+
+      <!-- Timer Panel -->
+      <section class="card timer-card idle" id="timerCard">
+        <div class="status-badge" id="statusBadge">READY</div>
+        <div class="round-indicator" id="roundIndicator">Round 0 / 5</div>
+        <div class="timer-display" id="timerDisplay">03:00</div>
+
+        <div class="controls">
+          <button id="startBtn" class="btn btn-primary">Start Workout</button>
+          <button id="pauseBtn" class="btn btn-warning" disabled>Pause</button>
+          <button id="resetBtn" class="btn btn-danger" disabled>Reset</button>
+        </div>
+      </section>
+
+      <!-- History Log -->
+      <section class="card history-card">
+        <div class="history-header">
+          <h2>Workout History Log</h2>
+          <button id="clearLogBtn" class="btn-text">Clear Log</button>
+        </div>
+        <div class="history-list" id="historyList">
+          <p class="empty-state">No recorded sessions yet. Finish a workout to log your stats!</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="box.js"></script>
+</body>
+</html>
